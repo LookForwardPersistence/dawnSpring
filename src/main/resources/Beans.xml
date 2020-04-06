@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--初始化方法和销毁方法:框架使用 元素中的 default-init-method 和 default-destroy-method 属性提供了灵活地配置 default-init-method="init" default-destroy-method="destroy"-->
+    <!--prototype 多例 ;singleton单例  -->
+    <bean id="dawnMessage" class="com.dawn.lifebean.DawnMessage" scope="singleton"
+          init-method="init" destroy-method="destroy">
+        <property name="msg" value="Come on Dawn!"></property>
+    </bean>
+    <bean class="com.dawn.lifebean.InitDawn"/>
+
+    <bean id="messageOne" class="com.dawn.extendbean.MessageOne">
+        <property name="name" value="Dawn"></property>
+        <property name="addr" value="PINGNAN"></property>
+    </bean>
+    <!--Bean messageTwo继承messageOne-->
+    <bean id="messageTwo" class="com.dawn.extendbean.MessageTwo" parent="beanTemplate">
+        <property name="name" value="Star"></property>
+        <property name="job" value="Engineer"></property>
+    </bean>
+
+    <!--bean定义模板-->
+    <bean id="beanTemplate" abstract="true">
+        <property name="name" value="Dawn"></property>
+        <property name="addr" value="GUANGXI"></property>
+        <property name="job" value="Engineer"></property>
+    </bean>
+</beans>
