@@ -40,4 +40,38 @@
     <bean id="valueMethod" class="com.dawn.di.ValueMethod" p:spellChecker-ref="spellChecker">
         <!--<property name="spellChecker" ref="spellChecker"></property>-->
     </bean>
+
+    <!--注入集合-->
+    <bean id="javaCollection" class="com.dawn.di.JavaCollection">
+        <property name="addressList">
+            <list>
+                <value>Diana</value>
+                <value>Dawn</value>
+                <value>Dawn</value>
+                <value>Star</value>
+            </list>
+        </property>
+        <property name="addressSet">
+            <set>
+                <value>Diana</value>
+                <value>Dawn</value>
+                <value>Star</value>
+            </set>
+        </property>
+        <property name="mapAddress">
+            <map>
+                <entry key="1" value="Diana"></entry>
+                <entry key="2" value="Dawn"></entry>
+                <entry key="3" value="Star"></entry>
+            </map>
+        </property>
+
+        <property name="addressProp">
+            <props>
+                <prop key="1">Diana</prop>
+                <prop key="2">Dawn</prop>
+                <prop key="3">Star</prop>
+            </props>
+        </property>
+    </bean>
 </beans>

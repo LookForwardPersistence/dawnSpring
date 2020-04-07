@@ -8,6 +8,7 @@ public class ValueMethod {
 
     private SpellChecker spellChecker;
 
+    private String name;
     public SpellChecker getSpellChecker() {
         return spellChecker;
     }
@@ -19,5 +20,13 @@ public class ValueMethod {
 
     public void spellChecker(){
         spellChecker.checkSpelling();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
