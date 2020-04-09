@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-beans.xsd">
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
     <!--开启注解-->
     <context:annotation-config/>
@@ -13,4 +13,27 @@
         <property name="name" value="Dawn"></property>
         <property name="address" value="PingNan"></property>
     </bean>
+
+    <bean id="dawn1" class="com.dawn.annotation.Dawn">
+        <property name="name" value="Dawn1"></property>
+        <property name="address" value="SZ"></property>
+    </bean>
+    <!--Autowired 注解-->
+    <bean id="autowiredDawn" class="com.dawn.annotation.AutowiredDawn"></bean>
+
+    <bean id="spellChecker" class="com.dawn.di.SpellChecker"></bean>
+
+    <bean id="structerDawn" class="com.dawn.annotation.StructerDawn"></bean>
+    <bean id="qualifterDawn" class="com.dawn.annotation.QaulifterDawn"></bean>
+
+    <!--postconstruct-->
+<!--  <bean id="jsr250Dawn" class="com.dawn.annotation.JSR250Dawn"
+          init-method="init" destroy-method="destroy">
+        <property name="message" value="Come on! Dawn"/>
+    </bean>-->
+    <bean id="jsr250Dawn" class="com.dawn.annotation.JSR250Dawn">
+        <property name="message" value="Come on! Dawn"/>
+    </bean>
+
+    <bean id="resourceDawn" class="com.dawn.annotation.ResourceDawn"></bean>
 </beans>

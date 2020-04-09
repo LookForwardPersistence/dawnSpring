@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+    <!--基于AOP的XML框架-->
+    <aop:config>
+         <aop:aspect id="log" ref="logging">
+             <aop:pointcut id="all" expression="execution(* com.dawn..*.*(..))"/>
+             <aop:before method="beforeAdvice" pointcut-ref="all"/>
+             <aop:after method="afterAdvice" pointcut-ref="all"/>
+             <aop:after-returning method="afterReturningAdvice" returning="object"  pointcut-ref="all"/>
+             <aop:after-throwing method="afterThrowingAdvice" throwing="ex" pointcut-ref="all"/>
+         </aop:aspect>
+    </aop:config>
+    <bean id="message" class="com.dawn.aop.Message">
+        <property name="address" value="PingNan"></property>
+        <property name="age" value="30"></property>
+    </bean>
+    <bean id="logging" class="com.dawn.aop.Logging"></bean>
+</beans>

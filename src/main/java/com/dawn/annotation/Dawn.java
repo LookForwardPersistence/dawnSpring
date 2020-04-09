@@ -1,5 +1,6 @@
 package com.dawn.annotation;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 
 import java.io.Serializable;
@@ -19,7 +20,8 @@ public class Dawn implements Serializable{
         return name;
     }
 
-    @Required
+    //可不用专递参数（或直接不写注解）
+    @Autowired(required = false)
     public void setName(String name) {
         this.name = name;
     }
@@ -32,5 +34,14 @@ public class Dawn implements Serializable{
     @Required
     public void setAddress(String address) {
         this.address = address;
+    }
+
+
+    public void init(){
+        System.out.println("execute the init");
+    }
+
+    public void destroy(){
+        System.out.println("execute the destroy");
     }
 }

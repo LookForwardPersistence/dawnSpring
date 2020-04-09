@@ -10,6 +10,14 @@
 
 
     <dependencies>
+        <!--jdbc-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.19</version>
+        </dependency>
+
+        <!--spring begin -->
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
@@ -116,6 +124,8 @@
             <artifactId>spring-websocket</artifactId>
             <version>4.3.14.RELEASE</version>
         </dependency>
+
+        <!--spring end-->
     </dependencies>
 
 </project>
