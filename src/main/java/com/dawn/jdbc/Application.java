@@ -17,10 +17,10 @@ public class Application {
         goodsJDBCTemplate.create(85,"orange",300);
         goodsJDBCTemplate.create(95,"banana",600);
 
-        System.out.println("---------get Goods------");
+        System.out.println("---------get GoodsDAO------");
         Goods goods= goodsJDBCTemplate.getGoods(2);
         System.out.println(goods.toString());
-        System.out.println("---------get Goods list--------");
+        System.out.println("---------get GoodsDAO list--------");
         List<Goods> list= goodsJDBCTemplate.listGoods();
         for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i).toString());

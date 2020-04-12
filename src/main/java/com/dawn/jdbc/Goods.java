@@ -50,7 +50,7 @@ public class Goods implements Serializable{
 
     @Override
     public String toString() {
-        return "Goods{" +
+        return "GoodsDAO{" +
                 "id=" + id +
                 ", fee=" + fee +
                 ", name='" + name + '\'' +

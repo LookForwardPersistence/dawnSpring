@@ -5,8 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.dawn</groupId>
-    <artifactId>dawnSpring</artifactId>
+    <artifactId>DawnWeb</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
 
     <dependencies>
@@ -128,4 +129,35 @@
         <!--spring end-->
     </dependencies>
 
+   <build>
+       <finalName>DawnWeb</finalName>
+       <pluginManagement>
+           <plugins>
+               <plugin>
+                   <artifactId>maven-clean-plugin</artifactId>
+                   <version>3.1.0</version>
+               </plugin>
+               <plugin>
+                   <artifactId>maven-resources-plugin</artifactId>
+                   <version>3.1.0</version>
+               </plugin>
+               <plugin>
+                   <artifactId>maven-compiler-plugin</artifactId>
+                   <version>3.8.1</version>
+               </plugin>
+               <plugin>
+                   <artifactId>maven-surefire-plugin</artifactId>
+                   <version>2.22.2</version>
+               </plugin>
+               <plugin>
+                   <artifactId>maven-install-plugin</artifactId>
+                   <version>2.5.2</version>
+               </plugin>
+               <plugin>
+                   <artifactId>maven-deploy-plugin</artifactId>
+                   <version>2.8.2</version>
+               </plugin>
+           </plugins>
+       </pluginManagement>
+   </build>
 </project>
